@@ -5,6 +5,7 @@
  *  - After giving permission, you will be redirected back to this file and it will display an OAuth token which you need to store in config.inc.php
  **/
 require __DIR__ . '/../composer/vendor/autoload.php';
+require __DIR__ . '/../config.inc.php';
 
 @session_start();
 
