@@ -23,6 +23,7 @@ $phantom_output = ob_get_clean();
 if(preg_match("/Amazon blocked our login, exiting/", $phantom_output))
 {
   output("Amazon blocked our login, can't continue!", "fail");
+  output($phantom_output, "success");
   exit;
 }
 
@@ -38,5 +39,7 @@ else {
   output("Found ".count($modified_books)." books to have changed, pushing them to Evernote");
   push_book_notes_to_evernote($modified_books);
 }
+
+output("All done!", "success");
 
 ?>

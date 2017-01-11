@@ -153,7 +153,6 @@ steps = [
     var count = result.match(/Amazon\.com Sign In/g);
     if(count !== null) { // Found!
       console.log("Amazon blocked our login, exiting!");
-      console.log(result);
       phantom.exit();
     }
 
