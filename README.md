@@ -28,6 +28,8 @@ cd ../ && npm install casperjs fs phantomjs system webpage
 - Get an Evernote application key & secret here: https://dev.evernote.com/doc/#start
 - Copy config.inc.php.sample to config.inc.php
 - Configure the newly generated Evernote key & secret, plus all other options in config.inc.php
+- Make the public/ directory available via a webserver, put the URL of /get_oauth_token.php into config.inc.php and visit it
+- You will be redirected to Evernote to grant permission to your application you created by creating the Evernote token
 - That's it! You can now run the app.
 
 ## Usage
