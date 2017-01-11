@@ -1,0 +1,40 @@
+<?php
+
+$CONFIG = [];
+
+// Phantomjs binary path (after npm install)
+$CONFIG['phantomjs_path']  = "/path/to/node_modules/phantomjs/bin/phantomjs";
+// Amazon login details
+$CONFIG['amazon_username'] = "my@email.tld";
+$CONFIG['amazon_password'] = "myplaintextpassword"; // no other option considering we need to put it into the Amazon login form. Make sure the permissions of this file are set correctly so only you can read it.
+
+// Evernote settings
+$CONFIG['evernote_sandbox']      = true;
+$CONFIG['evernote_key']          = "evernote-developer-key";
+$CONFIG['evernote_secret']       = "evernote-developer-secret";
+$CONFIG['evernote_callback_url'] = "http://public-url/get_oauth_token.php";
+$CONFIG['evernote_user_token']   = "replace-this-after-generating-an-oauth-token";
+
+// We'll be saving to this specific Evernote Notebook
+$CONFIG['evernote_notebook_name'] = "Books";
+
+// MySQL details
+$CONFIG['mysql_host']     = "127.0.0.1";
+$CONFIG['mysql_username'] = "kindle";
+$CONFIG['mysql_password'] = "mypassword";
+$CONFIG['mysql_database'] = "kindle";
+
+// Generic console ouput prettyfier function
+function output($str, $status = "none")
+{
+  $color = "";
+  if($status == "success")
+    $color = "\033[32m";
+  if($status == "fail")
+    $color = "\033[31m";
+
+  echo $color."[".date('Y-m-d H:i:s')."] ".$str."\033[0m\n";
+}
+
+
+?>

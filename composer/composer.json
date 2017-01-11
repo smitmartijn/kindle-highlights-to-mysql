@@ -1,0 +1,6 @@
+{
+    "require": {
+        "evernote/evernote-cloud-sdk-php": "dev-master",
+        "sunra/php-simple-html-dom-parser": "^1.5"
+    }
+}
