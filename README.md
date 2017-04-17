@@ -1,10 +1,10 @@
-# Sync Amazon Kindle Highlights to Evernote
+# Sync Amazon Kindle Highlights to MySQL Database
 
-*A combination of Nodejs and PHP to download your Amazon Kindle Highlights, store them in MySQL and push them to Evernote. (It has no official name, if you have a suggestion, hit me up!)*
+*A combination of Nodejs and PHP to download your Amazon Kindle Highlights, store them in MySQL and show them on a page. (It has no official name, if you have a suggestion, hit me up!)*
 
-This application is a combination of Nodejs and PHP to synchronise your Amazon Kindle Highlights to Evernote. You can highlight text and create notes inside your books on the Kindle (or Kindle app) from Amazon, but there's no way to easily get them out of Amazon. You can visit the [Your Highlights](https://kindle.amazon.com/your_highlights) page and copy/paste, but there's no public API to get a hold of your data.
+This application is a combination of Nodejs and PHP to synchronise your Amazon Kindle Highlights to a MySQL Database. You can highlight text and create notes inside your books on the Kindle (or Kindle app) from Amazon, but there's no way to easily get them out of Amazon. You can visit the [Your Highlights](https://kindle.amazon.com/your_highlights) page and copy/paste, but there's no public API to get a hold of your data.
 
-You can use this application to programmatically get your highlights and notes from the [Your Highlights](https://kindle.amazon.com/your_highlights) page, put them in a database and eventually synchronise them to Evernote.
+You can use this application to programmatically get your highlights and notes from the [Your Highlights](https://kindle.amazon.com/your_highlights) page, put them in a database and show them on a page (where you can take them and copy/paste into your notes manager).
 
 ## Installation
 
@@ -25,18 +25,17 @@ cd ../ && npm install casperjs fs phantomjs system webpage
 
 - Create a MySQL database, username & password on your MySQL server
 - Create MySQL structure by loading db/books.sql and db/highlights.sql
-- Get an Evernote application key & secret here: https://dev.evernote.com/doc/#start
-- Copy config.inc.php.sample to config.inc.php
-- Configure the newly generated Evernote key & secret, plus all other options in config.inc.php
-- Make the public/ directory available via a webserver, put the URL of /get_oauth_token.php into config.inc.php and visit it
+- Copy config.inc.php.sample to config.inc.php and configure all options
+- Make the public/ directory available via a webserver
 - You will be redirected to Evernote to grant permission to your application you created by creating the Evernote token
 - That's it! You can now run the app.
+- After the first run, you should see the results on the website.
 
 ## Usage
-If everything is properly set up, you can run the script by simply executing kindle_to_evernote.php
+If everything is properly set up, you can run the script by simply executing kindle_to_mysql.php
 
 ```
-php kindle_to_evernote.php
+php kindle_to_mysql.php
 ```
 
 When the first run is done, you can put the script into a scheduled task. Don't run it too often though, once a day is plenty. The big Amazon system is always watching and looking for automated bots on its website. If you run this too often, Amazon will start blocking your logins. If you're blocked, it'll reset in about an hour: it's not a permanent block. (phew!)
