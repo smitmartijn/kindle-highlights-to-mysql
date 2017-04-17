@@ -156,7 +156,7 @@ function parse_kindle_highlights($file)
     if($sth->rowCount())
     {
       output("Inserted book: ".$book_id." - ".$book_info['title'], "success");
-      // save it to give to the evernote processing farm
+      // save it to 
       $books_modified[$book_id] = $books[$book_id];
     }
 
@@ -184,7 +184,7 @@ function parse_kindle_highlights($file)
       if($sth->rowCount())
       {
         output("Inserted highlight for book: ".$book_info['title']." (".$book_id."): ".$highlight_info['text'], "success");
-        // save it to give to the evernote processing farm
+        // save it 
         $books_modified[$book_id] = $books[$book_id];
       }
     }
